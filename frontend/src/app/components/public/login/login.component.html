@@ -1,0 +1,14 @@
+<div class="main-div">
+    <mat-card [class.mat-elevation-z8]="!isActive" class="mat-card">
+        <mat-card-title>Logar</mat-card-title>
+        <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+            <mat-form-field>
+                <input matInput formControlName="email" type="email" placeholder="E-mail" formControlName="email" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field> 
+                <input matInput formControlName="senha" type="senha" placeholder="Senha" formControlName="senha" autocomplete="off">
+            </mat-form-field>
+            <button mat-raised-button type="submit" color="primary">Logar</button>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,25 @@
+.main-div{
+    margin-top: 130px;
+    text-align: -webkit-center;
+}
+
+.mat-card {
+    max-width: 400px;
+}
+
+.mat-card-title {
+    padding-top: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    max-width: 100%;
+}
+
+button {
+    margin-top: 10px;
+}
+
+

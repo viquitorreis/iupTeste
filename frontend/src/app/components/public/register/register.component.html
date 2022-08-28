@@ -1,0 +1,20 @@
+<div class="main-div">
+    <mat-card [class.mat-elevation-z8]="!isActive" class="mat-card">
+        <mat-card-title>Registrar</mat-card-title>
+        <form [formGroup]="register" (ngSubmit)="createUser()">
+            <mat-form-field>
+                <input matInput placeholder="Nome" formControlName="name" isRequired="true">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="E-mail" formControlName="email">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Senha" formControlName="senha">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Telefone" formControlName="telefone">
+            </mat-form-field>
+            <button mat-raised-button color="primary">Registrar</button>
+        </form>
+    </mat-card>
+</div>
