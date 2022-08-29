@@ -36,13 +36,14 @@ export class LoginComponent implements OnInit {
   loginUser(){
     this.http.get<any>(this.userService.baseUrl).subscribe(res=> {
       const user = res.find((a: any) => {
+        this.userService.userLogado.push(this.loginForm.value.email)
         return a.email === this.loginForm.value.email && a.senha === this.loginForm.value.senha
       })
       if(user){
         alert('Logou de boa')
         this.loginForm.reset()
         this.authService.login()
-        this.router.navigate(['board-user'])
+        this.router.navigate(['nav-veiculo-create'])
       } else {
         alert('Usuario nao encontrado')
       }

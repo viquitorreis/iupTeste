@@ -20,13 +20,18 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 
 import { AuthGuardService } from './components/services/auth-guard.service'
-import { AuthService } from'./components/services/auth.service'
+import { AuthService } from'./components/services/auth.service';
+import { NavVeiculoCreateComponent } from './components/nav-veiculo-create/nav-veiculo-create.component';
+import { VeiculoCreateComponent } from './components/veiculo-create/veiculo-create.component'
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    BoardUserComponent
+    BoardUserComponent,
+    NavVeiculoCreateComponent,
+    VeiculoCreateComponent
   ],
   imports: [
     BrowserModule,

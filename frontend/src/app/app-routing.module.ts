@@ -1,9 +1,11 @@
 import { AuthGuardService } from './components/services/auth-guard.service';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/public/login/login.component'
 import { RegisterComponent } from './components/public/register/register.component'
 import { BoardUserComponent } from './components/board-user/board-user.component'
+import { VeiculoCreateComponent } from './components/veiculo-create/veiculo-create.component'
+import { NavVeiculoCreateComponent } from './components/nav-veiculo-create/nav-veiculo-create.component';
 
 const routes: Routes = [
   {
@@ -20,8 +22,16 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
+    path: 'nav-veiculo-create',
+    component: NavVeiculoCreateComponent, canActivate: [AuthGuardService]
+  },
+  {
     path: 'board-user',
     component: BoardUserComponent, canActivate: [AuthGuardService]
+  },
+  {
+    path: 'nav-veiculo-create/veiculo-create',
+    component: VeiculoCreateComponent, canActivate: [AuthGuardService]
   }
 ];
 

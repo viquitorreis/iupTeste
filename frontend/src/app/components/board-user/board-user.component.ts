@@ -19,4 +19,8 @@ export class BoardUserComponent implements OnInit {
     this.authService.logout()
     this.router.navigate([''])
   }
+
+  navCreateVeiculo(): void {
+    this.router.navigate(['board-user/veiculo-create'])
+  }
 }

@@ -6,16 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  // baseUrl = 'http://localhost:3001/user'
-
-  // constructor(private http: HttpClient) {
-
-  // }
-
-  // continuaLogin(userCredentials: any) {
-  //   return this.http.get(this.baseUrl, userCredentials)
-  // }
-  userLogado: boolean = false
+  userLogado: boolean = true
 
   login(){
     this.userLogado = true
