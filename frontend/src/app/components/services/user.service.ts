@@ -56,4 +56,15 @@ export class UserService {
   }
 
   userLogado = []
+
+  getUserByEmail(){
+    this.http.get<any>(this.baseUrl).subscribe(res=>{
+      const user = res.find((a: any)=>{
+        return a.email === this.userLogado[0]
+      })
+      if(user){
+        console.log(user)
+      }
+    })
+  }
 }

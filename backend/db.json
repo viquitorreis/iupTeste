@@ -1,32 +1,12 @@
 {
   "user": [
     {
-      "id": 1,
-      "name": "Victor Reis",
-      "email": "victor@reis.com",
-      "telefone": "123456",
-      "senha": "123456"
-    },
-    {
-      "id": 2,
-      "name": "Cicero ",
-      "email": "cicero@roma.com",
-      "telefone": "123456",
-      "senha": "123456"
-    },
-    {
-      "id": 3,
-      "name": "Tiro",
-      "email": "tiro@roma.com",
-      "telefone": "123456",
-      "senha": "123456"
-    },
-    {
-      "name": "vda",
-      "email": "asd",
-      "senha": "asd",
-      "telefone": "asd",
-      "id": 4
+      "name": "user",
+      "email": "user@user.com",
+      "senha": "123456",
+      "telefone": "123",
+      "veiculos": [],
+      "id": 1
     }
   ]
 }

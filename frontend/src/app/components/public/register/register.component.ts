@@ -1,3 +1,4 @@
+import { Veiculo } from './../../veiculo.model';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from './../../user'
@@ -22,7 +23,7 @@ export class RegisterComponent implements OnInit {
         name: [''],
         email: [''],
         senha: [''],
-        telefone: ['']
+        telefone: [''],
       })
     }
 
@@ -33,14 +34,13 @@ export class RegisterComponent implements OnInit {
       name: this.register.get('name').value,
       email: this.register.get('email').value,
       senha: this.register.get('senha').value,
-      telefone: this.register.get('telefone').value
+      telefone: this.register.get('telefone').value,
+      veiculos: []
     }
     this.http.post(this.userService.baseUrl, request).subscribe({
       next: (n) => this.router.navigate(['/login']),
       error: (err) => this.userService.showMessage('ERROR'),
       complete: () => this.userService.showMessage('User criado com sucesso')
     })
-
   }
-
 }
