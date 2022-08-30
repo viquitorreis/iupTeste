@@ -23,6 +23,10 @@ import { AuthGuardService } from './components/services/auth-guard.service'
 import { AuthService } from'./components/services/auth.service';
 import { NavVeiculoCreateComponent } from './components/nav-veiculo-create/nav-veiculo-create.component';
 import { VeiculoCreateComponent } from './components/veiculo-create/veiculo-create.component'
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import { VeiculosReadComponent } from './components/veiculos-read/veiculos-read.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,8 @@ import { VeiculoCreateComponent } from './components/veiculo-create/veiculo-crea
     RegisterComponent,
     BoardUserComponent,
     NavVeiculoCreateComponent,
-    VeiculoCreateComponent
+    VeiculoCreateComponent,
+    VeiculosReadComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,10 @@ import { VeiculoCreateComponent } from './components/veiculo-create/veiculo-crea
     ReactiveFormsModule,
     MatFormFieldModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [AuthGuardService, AuthService],
   bootstrap: [AppComponent]

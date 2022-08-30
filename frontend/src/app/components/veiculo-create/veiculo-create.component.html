@@ -1,3 +1,24 @@
 <app-board-user></app-board-user>
-<button mat-raised-button (click)="createVeiculo()" color="primary">Salvar</button>
-<button mat-raised-button (click)="cancel()" color="primary">Cancelar</button>
+<div class="div-novo-veic">
+    <mat-card class="mat-elevation-z8">
+        <mat-card-title>Novo Veículo</mat-card-title>
+        <div class="nav-veic-create">
+            <form class="form-veic">
+                <mat-form-field>
+                    <input matInput placeholder="Placa">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Montadora">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Modelo">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Ano">
+                </mat-form-field>
+            </form>
+            <button mat-raised-button (click)="createVeiculo()" color="primary">Salvar</button>
+            <button mat-raised-button (click)="cancel()" color="primary" class="btn-cancelar">Cancelar</button>
+        </div>
+    </mat-card>
+</div>
