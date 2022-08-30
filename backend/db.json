@@ -25,16 +25,10 @@
       "telefone": "",
       "veiculos": [
         {
-          "placa": "ABC-1234",
-          "marca": "FIAT",
-          "modelo": "UNO",
-          "ano": "1997"
-        },
-        {
-          "placa": "ABc-1234",
-          "marca": "FIAT",
-          "modelo": "UNO",
-          "ano": "1997"
+          "placa": "fdafda",
+          "marca": "fdfda",
+          "modelo": "daffdafda",
+          "ano": "fdafdafda"
         }
       ],
       "id": 3

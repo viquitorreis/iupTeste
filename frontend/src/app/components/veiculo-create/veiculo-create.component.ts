@@ -12,16 +12,16 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./veiculo-create.component.css']
 })
 export class VeiculoCreateComponent implements OnInit {
-  novoVeiculo: FormGroup
+  formsVeiculo: FormGroup
   
   constructor(private userService: UserService,
     private router: Router,
     private veiculoService: VeiculosService,
     private http: HttpClient,
     private formBuilder: FormBuilder) {
-      this.novoVeiculo = this.formBuilder.group({
+      this.formsVeiculo = this.formBuilder.group({
         placa: [''],
-        montadora: [''],
+        marca: [''],
         modelo: [''],
         ano: ['']
       })
@@ -36,18 +36,32 @@ export class VeiculoCreateComponent implements OnInit {
       modelo: 'UNO',
       ano: '1997'
     }
-    
-    // usuario = this.userService.userCompleto.append(this.userService.userCompleto.veiculo)
-  createVeiculo(){
-    const antigoUser = this.userService.userCompleto
+    buttonType: any
 
+    onSubmit(buttonType): void {
+    if(buttonType==='salvar') {
+      this.salvar()
+    }
+    if(buttonType==='cancelar') {
+      this.cancelar()
+    }
+  }
+  
+  salvar(){
+    const antigoUser = this.userService.userCompleto
     let veiculosNoUser = antigoUser.veiculos
-    let achaVeic = veiculosNoUser.find(v => v.placa === this.Veiculo.placa)
-    if(!achaVeic){
+    const novoVeiculoRequest = {
+      placa: this.formsVeiculo.get('placa').value,
+      marca: this.formsVeiculo.get('marca').value,
+      modelo: this.formsVeiculo.get('modelo').value,
+      ano: this.formsVeiculo.get('ano').value,
+    }
+    let acharVeiculo = veiculosNoUser.find(v => v.placa === novoVeiculoRequest.placa)
+    if(!acharVeiculo){
       if(!antigoUser.veiculos) {
         antigoUser.veiculos = []
       }
-      antigoUser.veiculos.push(this.Veiculo)
+      antigoUser.veiculos.push(novoVeiculoRequest)
       this.http.put(`${this.userService.baseUrl}/${this.userService.idUser}`, antigoUser).subscribe((res: any)=>{
         if(res){
           this.userService.showMessage('Veículo criado')
@@ -122,7 +136,7 @@ export class VeiculoCreateComponent implements OnInit {
     //   console.log(this.idUser)
     // }
 
-  cancel(): void {
+  cancelar(): void {
     this.userService.showMessage('Operação cancelada')
     this.router.navigate(['nav-veiculo-create'])  
   }

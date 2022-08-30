@@ -3,12 +3,12 @@
     <mat-card class="mat-elevation-z8">
         <mat-card-title>Novo Veículo</mat-card-title>
         <div class="nav-veic-create">
-            <form class="form-veic" [formGroup]="novoVeiculo">
+            <form class="form-veic" [formGroup]="formsVeiculo" (ngSubmit)="onSubmit(buttonType)">
                 <mat-form-field>
                     <input matInput placeholder="Placa" formControlName="placa">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Montadora" formControlName="montadora">
+                    <input matInput placeholder="Montadora" formControlName="marca">
                 </mat-form-field>
                 <mat-form-field>
                     <input matInput placeholder="Modelo" formControlName="modelo">
@@ -16,9 +16,11 @@
                 <mat-form-field>
                     <input matInput placeholder="Ano" formControlName="ano">
                 </mat-form-field>
+                <div>
+                    <button mat-raised-button type="submit" (click)="onSubmit('salvar')" color="primary">Salvar</button>
+                    <button mat-raised-button type="submit" (click)="onSubmit('cancelar')" color="primary" class="btn-cancelar">Cancelar</button>
+                </div>
             </form>
-            <button mat-raised-button (click)="createVeiculo()" color="primary">Salvar</button>
-            <button mat-raised-button (click)="cancel()" color="primary" class="btn-cancelar">Cancelar</button>
         </div>
     </mat-card>
 </div>
