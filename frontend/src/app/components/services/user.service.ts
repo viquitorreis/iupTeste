@@ -20,6 +20,7 @@ export class UserService {
   constructor(private http: HttpClient,
     private snackbar: MatSnackBar) { }
 
+
   showMessage(msg: string, isError: boolean = false): void {
     this.snackbar.open(msg, 'X', {
       duration: 2500,
@@ -28,34 +29,6 @@ export class UserService {
       panelClass: isError ? ['msg-error'] : ['msg-succes']
     })
   }
-
-  // create(user: User): Observable<User> {
-  //   return this.http.post<User>(this.baseUrl, user)
-  // }
-
-  // readByEmail(id: number): Observable<User> {
-  //   const url = `${this.baseUrl}/${id}`
-  //   return this.http.get<User>(url)
-  // }
-
-
-  // readUser(): Observable<User[]> {
-  //   return this.http.get<User[]>(this.baseUrl)
-  // }
-
-  // login(email: string, senha: string): Observable<any> {
-  //   return this.http.post(
-  //     this.baseUrl + 'login',
-  //     {
-  //       email,
-  //       senha
-  //     },
-  //     httpOptions )
-  // }
-
-  // getUsers(): Observable<User>{
-  //   return this.http.get<User>(this.baseUrl)
-  // }
 
   userLogado = []
   
@@ -69,13 +42,9 @@ export class UserService {
 
   idUser = ''
 
-  // patchUser(user: User, body: Veiculo): Observable<User> {
-  //   return this.http.patch<User>(`${this.baseUrl}/user/${this.idUser[0]}`, user, body)
-  // }
 
-  userCompleto = {}
-
-
+  userCompleto: User
+  
   getUserByEmail() {
     this.http.get<any>(this.baseUrl).subscribe(res => {
       const user = res.find((a: any) => {

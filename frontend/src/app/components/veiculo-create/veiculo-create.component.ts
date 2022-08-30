@@ -22,7 +22,7 @@ export class VeiculoCreateComponent implements OnInit {
     }
     
     Veiculo: Veiculo = {
-      placa: 'ABC-1234',
+      placa: 'ABc-1234',
       marca: 'FIAT',
       modelo: 'UNO',
       ano: '1997'
@@ -30,8 +30,24 @@ export class VeiculoCreateComponent implements OnInit {
     
     // usuario = this.userService.userCompleto.append(this.userService.userCompleto.veiculo)
   createVeiculo(){
+    const antigoUser = this.userService.userCompleto
 
+    let veiculosNoUser = antigoUser.veiculos
+    let achaVeic = veiculosNoUser.find(v => v.placa === this.Veiculo.placa)
+    if(!achaVeic){
+      if(!antigoUser.veiculos) {
+        antigoUser.veiculos = []
+      }
+      antigoUser.veiculos.push(this.Veiculo)
+      this.http.put(`${this.userService.baseUrl}/${this.userService.idUser}`, antigoUser).subscribe((res: any)=>{
+        if(res){
+          this.userService.showMessage('Veículo criado')
+        }
+      })
+    } else { this.userService.showMessage('Erro: Veículo já existe') }
   }
+
+
   // idUser = []
   // getIdUser = this.http.get<any>(this.userService.baseUrl).subscribe(res=>{
   //   res.find((a: any)=>{

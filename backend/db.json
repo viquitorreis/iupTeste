@@ -23,7 +23,20 @@
       "email": "cicero@roma.com",
       "senha": "123456",
       "telefone": "",
-      "veiculos": [],
+      "veiculos": [
+        {
+          "placa": "ABC-1234",
+          "marca": "FIAT",
+          "modelo": "UNO",
+          "ano": "1997"
+        },
+        {
+          "placa": "ABc-1234",
+          "marca": "FIAT",
+          "modelo": "UNO",
+          "ano": "1997"
+        }
+      ],
       "id": 3
     }
   ]
