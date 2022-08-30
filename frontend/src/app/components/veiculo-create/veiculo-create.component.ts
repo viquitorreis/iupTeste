@@ -1,3 +1,4 @@
+import { User } from './../user';
 import { HttpClient } from '@angular/common/http';
 import { Veiculo } from './../veiculo.model';
 import { VeiculosService } from './../services/veiculos.service';
@@ -11,47 +12,90 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./veiculo-create.component.css']
 })
 export class VeiculoCreateComponent implements OnInit {
-  Veiculo: Veiculo = {
-    placa: 'ABC-1234',
-    marca: 'FIAT',
-    modelo: 'UNO',
-    ano: '1997'
-  }
-
+  
   constructor(private userService: UserService,
     private router: Router,
     private veiculoService: VeiculosService,
     private http: HttpClient) { }
+    
+    ngOnInit(): void {
+    }
+    
+    Veiculo: Veiculo = {
+      placa: 'ABC-1234',
+      marca: 'FIAT',
+      modelo: 'UNO',
+      ano: '1997'
+    }
+    
+    // usuario = this.userService.userCompleto.append(this.userService.userCompleto.veiculo)
+  createVeiculo(){
 
-  ngOnInit(): void {
   }
+  // idUser = []
+  // getIdUser = this.http.get<any>(this.userService.baseUrl).subscribe(res=>{
+  //   res.find((a: any)=>{
+  //     if(a.email === this.userService.userLogado[0]){
+  //       this.idUser = a.id
+  //     }
+  //   })
+  // })
+  
+
+  // createVeiculo(): void {
+  //   let userAtual = this.userService.userLogado[0]
+  //   console.log(userAtual)
+  //   this.http.get<any>(this.userService.baseUrl).subscribe(res=>{
+  //     const user = res.find((a: any)=>{
+  //       return a.email === this.userService.userLogado[0]
+  //     })
+  //     if(user){
+  //       const veic = user.veiculos
+
+  //       console.log(veic)
+  //       //user.veiculo.push(this.Veiculo)
+  //       let veiculoUser = user.veiculo
+  //       return this.http.patch<any>(`${this.userService.baseUrl}/user/${user.id}`, this.Veiculo)
+        
+
+  //       // // this.http.post(this.userService.baseUrl, this.Veiculo).subscribe({
+  //       // //   next: (n) => {
+  //       // //     veiculoUser.push(this.Veiculo)
+  //       // //     this.router.navigate(['/nav-veiculo-create'])
+  //       // //   },
+  //       // //   error: (err) => this.userService.showMessage('ERROR'),
+  //       // //   complete: () => this.userService.showMessage('Veiculo riado com sucesso')
+  //       // })
+  //       // console.log(user)
 
 
-  createVeiculo(): void {
-    let userAtual = this.userService.userLogado[0]
-    console.log(userAtual)
-    this.http.get<any>(this.userService.baseUrl).subscribe(res=>{
-      const user = res.find((a: any)=>{
-        return a.email === this.userService.userLogado[0]
-      })
-      if(user){
-        console.log(user.veiculo)
-        //user.veiculo.push(this.Veiculo)
-        let veiculoUser = user.veiculo
-        this.http.post(this.userService.baseUrl, this.Veiculo).subscribe({
-          next: (n) => {
-            veiculoUser.push(this.Veiculo)
-            this.router.navigate(['/nav-veiculo-create'])
-          },
-          error: (err) => this.userService.showMessage('ERROR'),
-          complete: () => this.userService.showMessage('Veiculo riado com sucesso')
-        })
-        console.log(user)
-      } else {
-        alert('deu errado essa merda')
-      }
-    })
-  }
+  //     } else {
+  //       alert('deu errado essa merda')
+  //     }
+  //   })
+  // }
+
+
+
+  // public createVeiculo(id: number, itemToAdd: string): void { 
+  //   console.log('sending patch request to add an item');
+
+  //   this.http.patch(`${this.userService.baseUrl}/user/${menuId}`, itemToAdd).subscribe(
+  //     res => { 
+  //       console.log('received ok response from patch request');
+  //     },
+  //     error => {
+  //       console.error('There was an error during the request');
+  //       console.log(error);
+  //     });
+
+  //   console.log('request sent. Waiting for response...');
+
+  // }
+
+    // createVeiculo(){
+    //   console.log(this.idUser)
+    // }
 
   cancel(): void {
     this.userService.showMessage('Operação cancelada')

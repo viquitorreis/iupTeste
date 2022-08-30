@@ -1,6 +1,8 @@
+import { Veiculo } from './../veiculo.model';
+import { MatIconModule } from '@angular/material/icon';
 import { Injectable } from '@angular/core';
 import { User } from './../user'
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -27,42 +29,59 @@ export class UserService {
     })
   }
 
-  create(user: User): Observable<User> {
-    return this.http.post<User>(this.baseUrl, user)
-  }
+  // create(user: User): Observable<User> {
+  //   return this.http.post<User>(this.baseUrl, user)
+  // }
 
-  readByEmail(id: number): Observable<User> {
-    const url = `${this.baseUrl}/${id}`
-    return this.http.get<User>(url)
-  }
-  
+  // readByEmail(id: number): Observable<User> {
+  //   const url = `${this.baseUrl}/${id}`
+  //   return this.http.get<User>(url)
+  // }
 
-  readUser(): Observable<User[]> {
-    return this.http.get<User[]>(this.baseUrl)
-  }
 
-  login(email: string, senha: string): Observable<any> {
-    return this.http.post(
-      this.baseUrl + 'login',
-      {
-        email,
-        senha
-      },
-      httpOptions )
-  }
+  // readUser(): Observable<User[]> {
+  //   return this.http.get<User[]>(this.baseUrl)
+  // }
 
-  getUsers(): Observable<User>{
-    return this.http.get<User>(this.baseUrl)
-  }
+  // login(email: string, senha: string): Observable<any> {
+  //   return this.http.post(
+  //     this.baseUrl + 'login',
+  //     {
+  //       email,
+  //       senha
+  //     },
+  //     httpOptions )
+  // }
+
+  // getUsers(): Observable<User>{
+  //   return this.http.get<User>(this.baseUrl)
+  // }
 
   userLogado = []
+  
+  dadosAtuaisUser() {
+    this.http.get<any>(this.baseUrl).subscribe(resp=>{
+      resp.find((a: any)=>{
+        
+      })
+    })
+  }
 
-  getUserByEmail(){
-    this.http.get<any>(this.baseUrl).subscribe(res=>{
-      const user = res.find((a: any)=>{
+  idUser = ''
+
+  // patchUser(user: User, body: Veiculo): Observable<User> {
+  //   return this.http.patch<User>(`${this.baseUrl}/user/${this.idUser[0]}`, user, body)
+  // }
+
+  userCompleto = {}
+
+
+  getUserByEmail() {
+    this.http.get<any>(this.baseUrl).subscribe(res => {
+      const user = res.find((a: any) => {
         return a.email === this.userLogado[0]
       })
-      if(user){
+      if (user) {
         console.log(user)
       }
     })

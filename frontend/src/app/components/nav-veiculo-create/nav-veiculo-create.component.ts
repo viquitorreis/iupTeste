@@ -16,6 +16,9 @@ export class NavVeiculoCreateComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.userService.userLogado[0])
+    console.log(this.userService.userLogado)
+    console.log(this.userService.idUser)
+    console.log(this.userService.userCompleto)
   }
 
   navCreateVeiculo(): void {

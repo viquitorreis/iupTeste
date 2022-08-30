@@ -5,8 +5,26 @@
       "email": "user@user.com",
       "senha": "123456",
       "telefone": "123",
-      "veiculos": [],
+      "veiculos": {
+        "placa": "fdafdafda"
+      },
       "id": 1
+    },
+    {
+      "name": "victor",
+      "email": "victor@victor.com",
+      "senha": "123456",
+      "telefone": "123",
+      "veiculos": [],
+      "id": 2
+    },
+    {
+      "name": "sd",
+      "email": "cicero@roma.com",
+      "senha": "123456",
+      "telefone": "",
+      "veiculos": [],
+      "id": 3
     }
   ]
 }

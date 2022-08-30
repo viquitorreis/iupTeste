@@ -43,6 +43,8 @@ export class LoginComponent implements OnInit {
         alert('Logou de boa')
         this.loginForm.reset()
         this.authService.login()
+        this.userService.idUser = user.id
+        this.userService.userCompleto = user
         this.router.navigate(['nav-veiculo-create'])
       } else {
         alert('Usuario nao encontrado')
