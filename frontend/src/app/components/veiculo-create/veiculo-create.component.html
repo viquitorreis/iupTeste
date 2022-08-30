@@ -3,18 +3,18 @@
     <mat-card class="mat-elevation-z8">
         <mat-card-title>Novo Veículo</mat-card-title>
         <div class="nav-veic-create">
-            <form class="form-veic">
+            <form class="form-veic" [formGroup]="novoVeiculo">
                 <mat-form-field>
-                    <input matInput placeholder="Placa">
+                    <input matInput placeholder="Placa" formControlName="placa">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Montadora">
+                    <input matInput placeholder="Montadora" formControlName="montadora">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Modelo">
+                    <input matInput placeholder="Modelo" formControlName="modelo">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Ano">
+                    <input matInput placeholder="Ano" formControlName="ano">
                 </mat-form-field>
             </form>
             <button mat-raised-button (click)="createVeiculo()" color="primary">Salvar</button>

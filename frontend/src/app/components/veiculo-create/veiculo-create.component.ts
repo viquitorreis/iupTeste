@@ -5,18 +5,27 @@ import { VeiculosService } from './../services/veiculos.service';
 import { Router } from '@angular/router';
 import { UserService } from './../services/user.service';
 import { Component, OnInit } from '@angular/core';
-
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 @Component({
   selector: 'app-veiculo-create',
   templateUrl: './veiculo-create.component.html',
   styleUrls: ['./veiculo-create.component.css']
 })
 export class VeiculoCreateComponent implements OnInit {
+  novoVeiculo: FormGroup
   
   constructor(private userService: UserService,
     private router: Router,
     private veiculoService: VeiculosService,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private formBuilder: FormBuilder) {
+      this.novoVeiculo = this.formBuilder.group({
+        placa: [''],
+        montadora: [''],
+        modelo: [''],
+        ano: ['']
+      })
+    }
     
     ngOnInit(): void {
     }
