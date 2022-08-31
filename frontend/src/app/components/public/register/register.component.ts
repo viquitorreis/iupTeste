@@ -15,13 +15,6 @@ export class RegisterComponent implements OnInit {
   isActive = false
   register: FormGroup
 
-  userEmails = new FormGroup({
-    primaryEmail: new FormControl('',[
-    Validators.required,
-    
-  Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")])
-  }); 
-
   constructor(private userService: UserService,
     private router: Router,
     private http: HttpClient,
@@ -33,6 +26,8 @@ export class RegisterComponent implements OnInit {
         telefone: [''],
       })
     }
+
+  
 
   ngOnInit(): void {
   }
