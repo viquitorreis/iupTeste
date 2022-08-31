@@ -1,7 +1,7 @@
 <app-board-user></app-board-user>
 <div class="div-novo-veic">
     <mat-card class="mat-elevation-z8">
-        <mat-card-title>Atualizar Veículo</mat-card-title>
+        <mat-card-title>Deletar Veículo</mat-card-title>
         <div class="nav-veic-create">
             <form class="form-veic">
                 <mat-form-field>
@@ -17,7 +17,7 @@
                     <input matInput placeholder="Ano" [ngModel]="veiculo.ano" name="ano" disabled>
                 </mat-form-field>
                 <div>
-                    <button mat-raised-button type="submit" (click)="deletarVeiculo()">Salvar</button>
+                    <button mat-raised-button type="submit" (click)="deletarVeiculo()">Deletar</button>
                     <button mat-raised-button type="submit" (click)="cancel()" color="primary" class="btn-cancelar">Cancelar</button>
                 </div>
             </form>
