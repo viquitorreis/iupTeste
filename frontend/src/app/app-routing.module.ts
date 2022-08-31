@@ -7,6 +7,7 @@ import { BoardUserComponent } from './components/board-user/board-user.component
 import { VeiculoCreateComponent } from './components/veiculo-create/veiculo-create.component'
 import { NavVeiculoCreateComponent } from './components/nav-veiculo-create/nav-veiculo-create.component';
 import { VeiculosUpdateComponent } from './../app/components/veiculos-update/veiculos-update.component'
+import { VeiculosDeleteComponent } from './components/veiculos-delete/veiculos-delete.component'
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'nav-veiculo-create/veiculosUpdate/:placa',
     component: VeiculosUpdateComponent, canActivate: [AuthGuardService]
+  },
+  {
+    path: 'nav-veiculo-create/veiculosDelete/:placa',
+    component: VeiculosDeleteComponent
   }
 ];
 

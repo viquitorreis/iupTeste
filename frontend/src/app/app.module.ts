@@ -28,6 +28,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import { VeiculosReadComponent } from './components/veiculos-read/veiculos-read.component';
 import { VeiculosUpdateComponent } from './components/veiculos-update/veiculos-update.component';
+import { VeiculosDeleteComponent } from './components/veiculos-delete/veiculos-delete.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { VeiculosUpdateComponent } from './components/veiculos-update/veiculos-u
     NavVeiculoCreateComponent,
     VeiculoCreateComponent,
     VeiculosReadComponent,
-    VeiculosUpdateComponent
+    VeiculosUpdateComponent,
+    VeiculosDeleteComponent
   ],
   imports: [
     BrowserModule,

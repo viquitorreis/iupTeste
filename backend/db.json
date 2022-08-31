@@ -15,14 +15,7 @@
       "email": "victor@victor.com",
       "senha": "123456",
       "telefone": "123",
-      "veiculos": [
-        {
-          "placa": "Victor",
-          "marca": "123",
-          "modelo": "123",
-          "ano": "123"
-        }
-      ],
+      "veiculos": [],
       "id": 2
     },
     {
@@ -30,20 +23,7 @@
       "email": "cicero@roma.com",
       "senha": "123456",
       "telefone": "123",
-      "veiculos": [
-        {
-          "placa": "123143",
-          "marca": "tesla",
-          "modelo": "123",
-          "ano": "123"
-        },
-        {
-          "placa": "tesla",
-          "marca": "xd",
-          "modelo": "1212",
-          "ano": "431143143"
-        }
-      ],
+      "veiculos": [],
       "id": 3
     }
   ]
