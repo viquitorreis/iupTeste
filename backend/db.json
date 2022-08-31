@@ -23,7 +23,14 @@
       "email": "cicero@roma.com",
       "senha": "123456",
       "telefone": "123",
-      "veiculos": [],
+      "veiculos": [
+        {
+          "placa": "daad",
+          "marca": "daffadfad",
+          "modelo": "fdafada",
+          "ano": "afdadfafddaf"
+        }
+      ],
       "id": 3
     }
   ]

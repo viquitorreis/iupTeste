@@ -25,6 +25,11 @@ form {
     max-width: 100%;
 }
 
+a{
+    color: black;
+    font-size: 12px;
+}
+
 button {
     margin-top: 10px;
 }

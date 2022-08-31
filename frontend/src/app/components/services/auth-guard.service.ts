@@ -9,7 +9,6 @@ export class AuthGuardService implements CanActivate{
 
   constructor(private authService: AuthService, private router: Router) { }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    // throw new Error('Method not implemented.');
     if( this.authService.userAutenticado() ){
       return true
     } else {
