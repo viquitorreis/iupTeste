@@ -15,38 +15,33 @@
       "email": "victor@victor.com",
       "senha": "123456",
       "telefone": "123",
-      "veiculos": [],
+      "veiculos": [
+        {
+          "placa": "Victor",
+          "marca": "123",
+          "modelo": "123",
+          "ano": "123"
+        }
+      ],
       "id": 2
     },
     {
-      "name": "sd",
+      "name": "123",
       "email": "cicero@roma.com",
       "senha": "123456",
-      "telefone": "",
+      "telefone": "123",
       "veiculos": [
         {
-          "placa": "fdafda",
-          "marca": "fdfda",
-          "modelo": "daffdafda",
-          "ano": "fdafdafda"
-        },
-        {
-          "placa": "122111",
-          "marca": "ffdaafd",
-          "modelo": "fdafdafda",
-          "ano": "fdafda"
-        },
-        {
-          "placa": "asedede",
-          "marca": "123",
+          "placa": "123143",
+          "marca": "tesla",
           "modelo": "123",
           "ano": "123"
         },
         {
-          "placa": "dfdfdfdfd",
-          "marca": "1234",
-          "modelo": "1234",
-          "ano": "123"
+          "placa": "tesla",
+          "marca": "xd",
+          "modelo": "1212",
+          "ano": "431143143"
         }
       ],
       "id": 3

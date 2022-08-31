@@ -1,0 +1,20 @@
+.div-novo-veic{
+    text-align: -webkit-center;
+}
+
+.mat-card{
+    max-width: 400px;
+}
+
+/* .nav-veic-create{
+    margin-left: -40.5em;
+} */
+
+.form-veic{
+    display: flex;
+    flex-direction: column; 
+}
+
+.btn-cancelar{
+    margin-left: 1.5em;
+}

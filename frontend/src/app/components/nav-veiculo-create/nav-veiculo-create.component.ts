@@ -1,5 +1,4 @@
 import { UserService } from './../services/user.service';
-import { VeiculosService } from './../services/veiculos.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,15 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class NavVeiculoCreateComponent implements OnInit {
 
   constructor(private router: Router,
-    private veiculoService: VeiculosService,
     private userService: UserService) { }
 
-  ngOnInit(): void {
-    console.log(this.userService.userLogado[0])
-    console.log(this.userService.userLogado)
-    console.log(this.userService.idUser)
-    console.log(this.userService.userCompleto)
-  }
+  ngOnInit(): void { }
 
   navCreateVeiculo(): void {
     this.router.navigate(['nav-veiculo-create/veiculo-create'])

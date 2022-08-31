@@ -18,39 +18,49 @@ export class VeiculosUpdateComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute) {
-      this.formsVeiculo = this.formBuilder.group({
-        placa: [''],
-        marca: [''],
-        modelo: [''],
-        ano: ['']
-      })
-    }
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(this.getPlaca())
     this.veiculo = this.getPlaca()
   }
 
   placa = this.route.snapshot.paramMap.get('placa')
+  index = []
 
   getPlaca(){
     let veiculosDoUser = this.userService.userCompleto.veiculos
     let placaVeiculo = []
     veiculosDoUser.find(v => {
+      let veicAtual = []
       if(v.placa === this.placa){
+        
         placaVeiculo.push(v)
+        veicAtual.push(v)
+        let index = veiculosDoUser.indexOf(veicAtual[0])
+        this.index.push(index)
       }
     })
-    return placaVeiculo[0]
+    return placaVeiculo[0] 
   }
 
-  atualizarVeiculo(veiculo: Veiculo){
-    this.http.put(`${this.userService.baseUrl}/${this.userService.idUser}`, veiculo)
-    this.userService.showMessage('User atualizado djow :)')
+  atualizarVeiculo(){
+    let veiculosAntigosDouser = this.userService.userCompleto.veiculos
+    let userAntigo = this.userService.userCompleto
+    veiculosAntigosDouser.find(v => {
+      if(v.placa === this.placa){
+        userAntigo.veiculos.splice(this.index[0], 1, v)
+      }
+    })
+    this.http.put(`${this.userService.baseUrl}/${this.userService.idUser}`, userAntigo).subscribe((res: any)=>{
+      if(res){
+        this.router.navigate(['nav-veiculo-create'])
+        this.userService.showMessage('Veículo atualizado')
+      } else { this.userService.showMessage('tilt!')}
+    }) 
   }
 
   cancel(){
-    
+    this.userService.showMessage('Operação Cancelada')
+    this.router.navigate(['nav-veiculo-create'])
   }
 }
