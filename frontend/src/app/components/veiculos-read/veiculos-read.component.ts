@@ -1,30 +1,22 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTable } from '@angular/material/table';
-import { VeiculosReadDataSource, VeiculosReadItem } from './veiculos-read-datasource';
+import { UserService } from './../services/user.service';
+import { Veiculo } from './../veiculo.model';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-veiculos-read',
   templateUrl: './veiculos-read.component.html',
   styleUrls: ['./veiculos-read.component.css']
 })
-export class VeiculosReadComponent implements AfterViewInit {
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<VeiculosReadItem>;
-  dataSource: VeiculosReadDataSource;
+export class VeiculosReadComponent implements OnInit {
+  veiculos: Veiculo[]
+  displayedColumns = ['placa', 'marca', 'modelo', 'ano', 'acao']
 
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  constructor(private userService: UserService) { }
 
-  constructor() {
-    this.dataSource = new VeiculosReadDataSource();
+  ngOnInit(): void {
+    this.veiculos = this.readVeiculos
   }
 
-  ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
-  }
+  readVeiculos = this.userService.userCompleto.veiculos
+
 }

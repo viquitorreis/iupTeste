@@ -27,6 +27,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import { VeiculosReadComponent } from './components/veiculos-read/veiculos-read.component';
+import { VeiculosUpdateComponent } from './components/veiculos-update/veiculos-update.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { VeiculosReadComponent } from './components/veiculos-read/veiculos-read.
     BoardUserComponent,
     NavVeiculoCreateComponent,
     VeiculoCreateComponent,
-    VeiculosReadComponent
+    VeiculosReadComponent,
+    VeiculosUpdateComponent
   ],
   imports: [
     BrowserModule,

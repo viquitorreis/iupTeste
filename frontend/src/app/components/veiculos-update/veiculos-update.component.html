@@ -1,0 +1,26 @@
+<app-board-user></app-board-user>
+<div class="div-novo-veic">
+    <mat-card class="mat-elevation-z8">
+        <mat-card-title>Atualizar Veículo</mat-card-title>
+        <div class="nav-veic-create">
+            <form class="form-veic">
+                <mat-form-field>
+                    <input matInput placeholder="Placa" [(ngModel)]="veiculo.placa" name="placa">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Montadora" [(ngModel)]="veiculo.marca" name="marca">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Modelo" [(ngModel)]="veiculo.modelo" name="modelo">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Ano" [(ngModel)]="veiculo.ano" name="ano">
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button type="submit" (click)="atualizarVeiculo(veiculo)">Salvar</button>
+                    <button mat-raised-button type="submit" (click)="cancel()" color="primary" class="btn-cancelar">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+</div>

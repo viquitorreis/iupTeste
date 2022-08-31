@@ -1,3 +1,25 @@
-.full-width-table {
-  width: 100%;
+table {
+    width: 100%;
+}
+
+mat-table {
+    background-color: transparent !important;
+    border: solid 1px grey;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5em;
+}
+
+table tr:last-child td
+
+/*To remove the last border*/
+    {
+    border-bottom: 0 solid
+}
+
+.edit {
+    margin-right: 10px;
 }

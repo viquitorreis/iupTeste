@@ -30,20 +30,17 @@ export class VeiculoCreateComponent implements OnInit {
     ngOnInit(): void {
     }
     
-    Veiculo: Veiculo = {
-      placa: 'ABc-1234',
-      marca: 'FIAT',
-      modelo: 'UNO',
-      ano: '1997'
-    }
+
     buttonType: any
 
     onSubmit(buttonType): void {
     if(buttonType==='salvar') {
       this.salvar()
+      this.formsVeiculo.reset()
     }
     if(buttonType==='cancelar') {
       this.cancelar()
+      this.formsVeiculo.reset()
     }
   }
   
@@ -64,6 +61,8 @@ export class VeiculoCreateComponent implements OnInit {
       antigoUser.veiculos.push(novoVeiculoRequest)
       this.http.put(`${this.userService.baseUrl}/${this.userService.idUser}`, antigoUser).subscribe((res: any)=>{
         if(res){
+          // console.log(res)
+          this.router.navigate(['nav-veiculo-create'])
           this.userService.showMessage('Veículo criado')
         }
       })
